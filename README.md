@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## How to use Input Text
+
+        <app-text-input formControlName="username" [label]='"Username"'></app-text-input>
+        <app-text-input formControlName="password" [label]='"Password"' [type]='"password"'></app-text-input>
+    
+        <div class="row" *ngIf="validationErrors.length > 0">
+          <ul class="text-danger">   
+              <li *ngFor="let error of validationErrors">
+                  {{error}}
+              </li>
+          </ul>
+        </div>
+       
+ ## How to use Select Input 
+ 
+         <app-select-input formControlName="selectInputName" [label]='"selectInputLabel"' [options]="arrayOfOptions"></app-select-input>
