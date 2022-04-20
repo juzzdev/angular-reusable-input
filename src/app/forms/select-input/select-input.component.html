@@ -1,0 +1,17 @@
+<div class="form-group">
+    <div class="form-floating mt-1">
+      <select 
+        [formControl]="control"
+        [class.is-invalid]="control.touched && control.invalid"
+        class="form-select" >
+        <option *ngFor="let option of options" [ngValue]="option.id">{{option.text}}</option>
+      </select>
+      <div *ngIf="control?.errors?.['required']" class="invalid-feedback">
+        Please select a {{label}}
+      </div>
+      <div *ngIf="control?.errors?.['minlength']" class="invalid-feedback">
+        {{label}} must be at least {{control.errors?.['minlength'].requiredLength}} letters
+      </div>
+      <label for="floatingSelect">{{label}}</label>
+    </div>
+  </div>

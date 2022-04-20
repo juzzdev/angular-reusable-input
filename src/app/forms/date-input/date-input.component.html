@@ -1,0 +1,13 @@
+<div class="form-group">
+    <div class="form-floating mt-3">
+        <input 
+            type="text"
+            [class.is-invalid]='ngControl.touched && ngControl.invalid'
+            class='form-control'      
+            placeholder="{{label}}"
+            bsDatepicker
+        >
+        <!-- <div *ngIf="ngControl.control?.errors?.required" class="invalid-feedback">{{label}} is required</div> -->
+        <label for="floatingInput">{{label}}</label>
+    </div>
+</div>

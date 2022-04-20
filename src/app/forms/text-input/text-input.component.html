@@ -1,0 +1,33 @@
+<div class="form-group">
+    <div class="form-floating mt-1">
+        <input 
+        value="control"
+        type={{type}}
+        placeholder={{label}}
+        class="form-control" 
+        [readonly] = "readonly"
+        [formControl]="control"
+        [class.is-invalid]="control.touched && control.invalid"
+        (keyup.enter)="onKeyUpEnter($event)"
+        >
+        <div *ngIf="control.errors?.['required']" class="invalid-feedback">
+            Please enter a {{label}}
+        </div>
+        <div *ngIf="control.errors?.['minlength']" class="invalid-feedback">
+            {{label}} must be at least {{control.errors?.['minlength'].requiredLength}}
+        </div>
+        <div *ngIf="control.errors?.['maxlength']" class="invalid-feedback">
+            {{label}} must be at most {{control.errors?.['maxlength'].requiredLength}}
+        </div>
+        <div *ngIf="control.errors?.['isMatching']" class="invalid-feedback">
+            Passwords do not match
+        </div>
+        <div *ngIf="control.errors?.['min']" class="invalid-feedback">
+            Minimum {{label}} allowed is {{control.errors?.['min'].min}}
+        </div>
+        <div *ngIf="control.errors?.['max']" class="invalid-feedback">
+            Maximum {{label}} allowed is {{control.errors?.['max'].max}}
+        </div>
+        <label for="floatingInput">{{label}}</label>
+    </div>
+</div> 
